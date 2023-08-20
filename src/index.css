@@ -1,13 +1,376 @@
-body {
+/* Key Color Codes
+beige = #f5eec2
+dark green = #416a59
+dark blue = #39359f
+green = #73a24e
+rich green #008300
+light green = #a9c25d
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Inter:wght@300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bricolage Grotesque", "Roboto", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5eec2;
 }
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container {
+  padding: 48px 0;
+}
+
+h1 {
+  text-align: left;
+}
+
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+.section__title {
+  font-size: 48px;
+}
+
+p {
+  text-align: center;
+}
+
+.no-cursor {
+  cursor: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.green {
+  color: #008300;
+}
+
+.click:hover {
+  transform: scale(1.1);
+}
+
+.click:active {
+  transform: scale(0.9);
+}
+
+.link__hover-effect {
+  position: relative;
+}
+
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  height: 3px;
+  width: 0%;
+  transition: all 300ms ease;
+}
+
+.link__hover-effect:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+/* 
+
+NAV BAR 
+
+*/
+
+nav {
+  background-color: transparent;
+}
+
+.nav__bar {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-around;
+  width: 50vw;
+  max-width: 500px;
+}
+
+.nav__list {
+  font-size: 24px;
+  font-weight: 600;
+  list-style: none;
+  margin: 0 8px;
+  text-align: center;
+  position: relative;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: black;
+  transition: color 300ms ease;
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  color: #73a24e;
+}
+
+.nav__link:after {
+  background-color: #73a24e;
+  height: 4px;
+}
+
+.nav__link--contact:hover {
+  color: #39359f;
+}
+
+.nav__link--contact:after {
+  background-color: #39359f;
+  height: 4px;
+}
+
+.lanes__list {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  left: -16px;
+  opacity: 1;
+  animation: open 800ms ease;
+  color: #73a24e;
+}
+
+.lanes__list--link {
+  color: black;
+  margin: 4px 0;
+}
+
+.lanes__item:hover {
+  list-style: disc;
+}
+
+.lanes {
+  color: #73a24e;
+}
+
+.lanes:after {
+  background-color: #73a24e;
+  width: 100%;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/* 
+
+LANDING PAGE
+
+*/
+
+#landing {
+  height: calc(100vh - (77px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.landing__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing__title {
+  font-size: 64px;
+  width: 100%;
+}
+
+.section__para {
+  font-size: 24px;
+  margin: 12px 0;
+  width: 40%;
+}
+
+/* 
+
+MOVIES LIST PAGE
+
+*/
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie__container {
+  border: 4px solid black;
+  border-radius: 24px;
+  padding: 32px;
+  margin: 24px 0 0 0;
+  display: flex;
+}
+
+.movie__img--wrapper {
+  width: 20%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.movie__poster--img {
+  width: 100%;
+}
+
+.movie__description {
+  margin: 0 24px;
+  width: 60%;
+}
+
+.movie__title {
+  font-size: 32px;
+}
+
+.movie__para {
+  margin: 12px 0 0 0;
+}
+
+.carlo__notes {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+
+.carlo__notes--header {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+
+.carlo__notes--para {
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.review__header {
+  margin: 0 0 12px;
+}
+
+.skeleton {
+  background-color: #c8c8c8;
+}
+
+.movie__skeleton {
+  border: 4px solid #c8c8c8;
+  border-radius: 24px;
+  padding: 32px;
+  margin: 24px 0 0 0;
+  display: flex;
+  width: 100%;
+}
+
+.movie__poster--skeleton {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.movie__description--skeleton {
+  margin: 0 24px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie__title--skeleton {
+  height: 40px;
+  margin: 0 0 8px;
+  width: 50%;
+  align-self: center;
+}
+
+.movie__year--skeleton {
+  width: 10%;
+  height: 12px;
+  align-self: center;
+}
+
+.movie__para--skeleton {
+  margin: 12px 0 0 0;
+  height: 60%;
+}
+
+.carlo__notes--skeleton {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+
+.carlo__notes--header--skeleton {
+  width: 100%;
+  margin: 0 0 12px;
+  height: 20px;
+}
+
+.carlo__notes--para--skeleton {
+  height: 70px;
+  margin: 0 0 20px;
+  width: 100%;
+}
+
+.review__header--skeleton {
+  height: 20px;
+  margin: 0 0 12px;
+  width: 100%;
+}
+
+.review__para--skeleton {
+  height: 70px;
+  width: 100%;
+}
+
+/* 
+
+ANIME LIST PAGE
+
+*/
