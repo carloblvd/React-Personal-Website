@@ -136,11 +136,11 @@ nav {
 }
 
 .nav__link:hover {
-  color: #73a24e;
+  color: #008300;
 }
 
 .nav__link:after {
-  background-color: #73a24e;
+  background-color: #008300;
   height: 4px;
 }
 
@@ -242,11 +242,34 @@ MOVIES LIST PAGE
   justify-content: center;
 }
 
+.movie__filter__sort {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.movie__sort,
+.movie__filter {
+  padding: 2px;
+  margin: 0 8px;
+  color: white;
+  background-color: #008300;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.movie__sort:focus-visible,
+.movie__filter:focus-visible {
+  outline: none;
+}
+
 .movie__container {
   border: 4px solid black;
   border-radius: 24px;
   padding: 32px;
-  margin: 24px 0 0 0;
+  margin: 24px 0 0;
   display: flex;
 }
 
@@ -266,36 +289,70 @@ MOVIES LIST PAGE
 }
 
 .movie__title {
-  font-size: 32px;
+  font-size: 37px;
+}
+
+.movie__year {
+  font-size: 24px;
 }
 
 .movie__para {
-  margin: 12px 0 0 0;
+  margin: 24px 0 0 0;
+  font-size: 20px;
 }
 
-.carlo__notes {
+.movie__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 75%;
+}
+
+.rating_and_genre {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.carlo__section {
   display: flex;
   flex-direction: column;
   width: 20%;
   align-items: center;
+  justify-content: space-around;
 }
 
 .carlo__notes--header {
-  font-size: 16px;
+  font-size: 20px;
   margin: 0 0 12px;
 }
 
 .carlo__notes--para {
-  font-size: 14px;
+  font-size: 18px;
   margin: 0 0 20px;
 }
 
 .review__header {
+  font-size: 18px;
   margin: 0 0 12px;
+}
+
+.review__para {
+  font-size: 18px;
 }
 
 .skeleton {
   background-color: #c8c8c8;
+}
+
+/* 
+
+MOVIE SKELETON 
+
+*/
+
+.movie {
+  width: 100%;
 }
 
 .movie__skeleton {
@@ -303,15 +360,15 @@ MOVIES LIST PAGE
   border-radius: 24px;
   padding: 32px;
   margin: 24px 0 0 0;
-  display: flex;
   width: 100%;
+  display: flex;
 }
 
 .movie__poster--skeleton {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  height: 100%;
+  height: 300px;
 }
 
 .movie__description--skeleton {
@@ -344,6 +401,7 @@ MOVIES LIST PAGE
   flex-direction: column;
   width: 20%;
   align-items: center;
+  justify-content: space-around;
 }
 
 .carlo__notes--header--skeleton {

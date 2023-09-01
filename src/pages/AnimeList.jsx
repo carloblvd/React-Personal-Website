@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { AnimeData } from "../AnimeData";
+import axios from "axios";
 
 const AnimeList = () => {
+  const url = "https://api.jikan.moe/v4/anime";
+  const [animeInfo, setAnimeInfo] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(url);
+        setAnimeInfo(response.data.data[24]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  console.log(animeInfo);
+
   return (
     <section id="anime-list">
       <div className="container">
