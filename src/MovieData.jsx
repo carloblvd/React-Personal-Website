@@ -1,4 +1,4 @@
-// let template = { name: "", imdbID: "" };
+// let template = { name: "", imdbID: "", carlonotes:"", review:"" };
 
 export const movieTitleAndId = [
   {
@@ -200,6 +200,13 @@ export const movieTitleAndId = [
     name: "Wildflower",
     imdbID: "tt12024308",
     carlonotes: "Looks super sad but very interesting.",
+    review: "",
+  },
+  {
+    name: "Talk to Me",
+    imdbID: "tt10638522",
+    carlonotes:
+      "A24 makes great movies and I'm so excited to see this one. Probably and hopefully the first movie I watch on my watchlist.",
     review: "",
   },
 ];

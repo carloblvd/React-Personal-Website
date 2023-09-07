@@ -56,6 +56,10 @@ p {
   cursor: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 li {
   list-style: none;
 }
@@ -64,8 +68,21 @@ a {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
 .green {
   color: #008300;
+}
+
+.white {
+  color: white;
+}
+
+.click {
+  background-color: transparent;
+  transition: all 300ms ease;
 }
 
 .click:hover {
@@ -427,8 +444,276 @@ MOVIE SKELETON
   width: 100%;
 }
 
+.anime__header--btn {
+  font-size: 24px;
+  color: black;
+}
+
+.anime__header--btn:hover {
+  color: #008300;
+}
+
 /* 
 
 ANIME LIST PAGE
 
 */
+
+/* 
+
+ANIME PAGE 
+
+*/
+
+.prev-and-next__btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 48px;
+}
+
+.anime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.anime__ranking--header {
+  font-size: 48px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.anime__info--container {
+  position: relative;
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.anime__info {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.anime__img--content {
+  width: 30%;
+  position: relative;
+}
+
+.anime__title {
+  font-size: 40px;
+  margin: 0 32px 0 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 0 32px;
+}
+
+.anime__reasoning {
+  display: flex;
+  align-items: flex-end;
+  padding: 64px 0 0;
+  font-size: 20px;
+  margin: 0 0 32px;
+}
+
+.anime__img--wrapper {
+  width: 100%;
+}
+
+.anime__img {
+  transition: all 300ms ease;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.anime__img--content:hover .anime__img {
+  filter: blur(12px) brightness(0.4);
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.anime__img--content:hover .anime__synopsis {
+  opacity: 1;
+}
+
+.anime__synopsis {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  transition: all 400ms ease;
+  transform: translateY(-50%) translateX(5%);
+  opacity: 0;
+  width: 90%;
+}
+
+.anime__img--content:hover .open__synopsis--btn {
+  opacity: 1;
+}
+
+.synopsis__btn {
+  color: #008300;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0 4px;
+  margin: 0 4px;
+  transition: all 300ms ease;
+  opacity: 0;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.synopsis__btn:hover {
+  background-color: #008300;
+  border-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.open__synopsis--btn:hover {
+  box-shadow: 4px 4px 4px #242424;
+}
+
+.full__synopsis {
+  position: absolute;
+  width: 300%;
+  bottom: -8px;
+  z-index: 10;
+  background-color: #242424;
+  padding: 16px;
+  border-radius: 24px;
+  animation: synopsisOpen 600ms ease;
+}
+
+@keyframes synopsisOpen {
+  0% {
+    transform: scale(0.1) translateX(-50%) translateY(30%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.full__synopsis--para {
+  opacity: 1;
+  transition: all 400ms 400ms ease;
+}
+
+.full__synopsis--para {
+  opacity: 1;
+}
+
+.close__synopsis--btn {
+  opacity: 1;
+}
+
+.close__synopsis--btn:hover {
+  box-shadow: 4px 4px 4px #ffffff36;
+}
+
+/* 
+
+FOOTER
+
+*/
+
+footer {
+  background-color: #242424;
+}
+
+.footer__container {
+  padding: 48px 0 24px;
+}
+
+.footer__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 300ms ease;
+}
+
+.footer__home {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #73a24e;
+  font-size: 24px;
+  border: 2px solid #73a24e;
+  padding: 4px 4px 4px 4px;
+  background-color: transparent;
+  transition: all 300ms ease;
+  border-radius: 8px;
+}
+
+.footer__home--btn {
+  position: absolute;
+  left: 50px;
+  opacity: 0;
+  color: #008300;
+}
+
+.footer__home:hover {
+  color: #008300;
+  border-color: #008300;
+  padding: 4px 88px 4px 4px;
+  transform: translateX(-30%);
+}
+
+.footer__home:hover .footer__home--btn {
+  opacity: 1;
+  transition: 300ms ease;
+  transition-delay: 300ms;
+}
+
+.footer__social--links {
+  display: flex;
+  margin: 24px 0;
+}
+
+.footer__item {
+  margin: 0 24px;
+  background-color: none;
+}
+
+.footer__social--logo {
+  color: white;
+}
+
+.footer__social--link {
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.116);
+  border-radius: 999px;
+}
+
+.footer__social--link:hover {
+  border-color: none;
+  animation: fillIn 300ms ease forwards;
+}
+
+.footer__social--link:hover .footer__social--logo {
+  color: white;
+}
+
+.footer__copyright {
+  color: white;
+}
+
+@keyframes fillIn {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #39359f;
+    border-color: #39359f;
+  }
+}

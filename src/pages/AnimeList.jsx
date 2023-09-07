@@ -1,26 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { AnimeData } from "../AnimeData";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const AnimeList = () => {
-  const url = "https://api.jikan.moe/v4/anime";
-  const [animeInfo, setAnimeInfo] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get(url);
-        setAnimeInfo(response.data.data[24]);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  console.log(animeInfo);
-
   return (
     <section id="anime-list">
       <div className="container">
@@ -30,10 +12,19 @@ const AnimeList = () => {
               My Anime <span className="green">Rankings</span>
             </h2>
             <p className="section__para">
-              This lane holds all the animes I have watched and my rankings for
-              them.
+              My top 20 ranked animes/mangas I have seen.
             </p>
           </div>
+          {AnimeData.slice(0, 20)
+            .map((anime, index) => (
+              <Link to={`/anime-list/${index + 1}`} key={anime.mal_id}>
+                <h4>
+                  {index + 1} {anime.name}
+                </h4>
+                <br />
+              </Link>
+            ))
+            .reverse()}
         </div>
       </div>
     </section>
